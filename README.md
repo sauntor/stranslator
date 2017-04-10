@@ -69,3 +69,9 @@ The code above is equal to:
     <to><zh>捷克，你来了。我已经等你好久了！</zh></to>
 </translator>
 ```
+
+### About the `stranslator.Translator`
+It's the core API for translating. You can initialize it with an URL, a class path resource with "cp://" (no prefix is identical to it too),
+or an external resource on a **Server**(i.e. http://localhost:9090/l10n/my_app.xml).
+
+### Enjoy it! :tea:
