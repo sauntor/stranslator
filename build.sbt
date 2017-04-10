@@ -1,7 +1,7 @@
 name := "stranslator"
 organization := "com.lingcreative"
 organizationName := "LingCreative Studio"
-version := "1.0.1-SNAPSHOT"
+version := "1.0.1"
 
 scalaVersion := "2.12.1"
 crossScalaVersions := Seq("2.11.0", "2.12.1")
