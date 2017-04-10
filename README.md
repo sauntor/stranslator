@@ -19,7 +19,7 @@ A most lightweight library for translating you application to the local language
 ### Usage
 1. Add to your project
 ```sbtshell
-libraryDependencies += "com.lingcreative" %% "stranslator" % "1.0.1"
+libraryDependencies += "com.lingcreative" %% "stranslator" % "1.1.0"
 ```
 
 2. Code sample in your project
