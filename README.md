@@ -26,7 +26,7 @@ libraryDependencies += "com.lingcreative" %% "stranslator" % "1.0.1"
 ```scala
 val translator = Translator()
 val locale = new Locale("zh", "CN")
-implicit val context = SimpleTranslatorContext(translator, locale)
+implicit val context = SimpleTranslatorContext(translator, Seq(locale))
 
 val welcome = ${"Hello, Sauntor! Welcome to China!"}
 ```
@@ -69,6 +69,21 @@ The code above is equal to:
     <to><zh>捷克，你来了。我已经等你好久了！</zh></to>
 </translator>
 ```
+3. The default location to load translations from is `l10n/translator.xml`, i.e.
+```scala
+val translator = Translator()
+```
+Is equal to:
+```scala
+val translator = Translator("cp://l10n/translator.xml")
+```
+4. You can `include` another xml for translations by `<include>`tag :
+```xml
+<translator>
+    <include>http://localhost:9000/some/app/l10n/translations.xml</include>
+</translator>
+```
+> The `<include>` tag **does not** support **relative path** 
 
 ### About the `stranslator.Translator`
 It's the core API for translating. You can initialize it with an URL, a class path resource with "cp://" (no prefix is identical to it too),
