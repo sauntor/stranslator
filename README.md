@@ -45,7 +45,7 @@ If you create a translation file which is located in `l10n/translator.xml`(withi
 The `welcome` would be:
 `适然，你好！欢迎来到中国！`
 ###### Notice
-1. the line feed(\n) after the beginning and before the ending tag of `from`, `locale`s  in `to` tag(i.e. `<zh_CN>` and `</zh_CN>`), will be ignored.
+1. the line feed(`\n`) after the beginning and before the ending tag of `from`, `locale`s  in `to` tag(i.e. `<zh_CN>` and `</zh_CN>`), will be ignored.
 2. you can break one line into multiple lines by puting an `\ ` to the end of the line(and the leading space is ignored).
 For example:
 ```xml
