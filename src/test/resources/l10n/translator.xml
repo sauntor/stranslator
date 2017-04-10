@@ -1,0 +1,18 @@
+<translate>
+    <message>
+        <from>Hello, Mr. "Sauntor"! Welcome!</from>
+        <to>
+            <zh>你好阿，适然！</zh>
+            <zh_HK>您好，适然先生！ \
+
+                感谢您到香港游玩！
+            </zh_HK>
+            <zh_CN>你好阿，适然！ 欢迎您的到来中国！</zh_CN>
+            <zh_CN_TW>
+                您好，适然先生！ \
+                欢迎来到台湾！
+            </zh_CN_TW>
+
+        </to>
+    </message>
+</translate>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<translate>
+    <message>
+        <from>This is in l10n/load-test-included.xml</from>
+        <to>
+            <zh>这是从l10n/load-test-included.xml里加载的</zh>
+        </to>
+    </message>
+</translate>
