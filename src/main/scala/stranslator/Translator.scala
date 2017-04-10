@@ -154,12 +154,12 @@ case class Translator(val source:String) {
   */
 trait TranslatorContext {
   def translator: Translator
-  def locale: Seq[Locale]
+  def locales: Seq[Locale]
 }
 
 case class SimpleTranslatorContext(private val _translator: Translator, private val _locale: Seq[Locale]) extends TranslatorContext {
   override def translator: Translator = _translator
-  override def locale: Seq[Locale] = _locale
+  override def locales: Seq[Locale] = _locale
 }
 
 object Translator {
@@ -187,7 +187,7 @@ object Translator {
     def apply(message: =>String)(implicit context: TranslatorContext): String = {
       var translated: Option[String] = None
       breakable {
-        for (locale <- context.locale) {
+        for (locale <- context.locales) {
           translated = context.translator.tr(message, localeToSeq(locale))
           if (translated.isDefined) break
         }
