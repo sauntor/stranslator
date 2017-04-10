@@ -20,7 +20,7 @@ class TranslatorSpec extends org.specs2.mutable.Specification {
     }
 
     "translate message using the implicit context" in {
-      implicit val translatorContext = SimpleTranslatorContext(Translator(), new Locale("zh", "CN", "TW"))
+      implicit val translatorContext = SimpleTranslatorContext(Translator(), Seq(new Locale("zh", "CN", "TW")))
       ${"""Hello, Mr. "Sauntor"! Welcome!"""} must_== "您好，适然先生！ 欢迎来到台湾！"
     }
 

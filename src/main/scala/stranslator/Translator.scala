@@ -19,7 +19,7 @@ case class Message(from: String, to: Map[Seq[String], String])
 /** Create a translator and load translations from `source`.
   *
   * @constructor Create a new translator which can translate messages using a resource who's url is `source`.
-  * @param source the url of a file which contains translations, a resource from class path should start with `cp://`
+  * @param source the url of the resource which contains translations, a resource from class path should start with `cp://`
   *               or no prefix, and a url start with other scheme(e.g. file://, http://, and etc.) will be loaded
   *               with [[java.net.URI]].
   */
@@ -150,14 +150,16 @@ case class Translator(val source:String) {
   }
 }
 
+/** The context which provides a translator and the current candidate locales.
+  */
 trait TranslatorContext {
   def translator: Translator
-  def locale: Locale
+  def locale: Seq[Locale]
 }
 
-case class SimpleTranslatorContext(private val _translator: Translator, private val _locale: Locale) extends TranslatorContext {
+case class SimpleTranslatorContext(private val _translator: Translator, private val _locale: Seq[Locale]) extends TranslatorContext {
   override def translator: Translator = _translator
-  override def locale: Locale = _locale
+  override def locale: Seq[Locale] = _locale
 }
 
 object Translator {
@@ -183,7 +185,14 @@ object Translator {
 
   protected trait TranslatorSupport {
     def apply(message: =>String)(implicit context: TranslatorContext): String = {
-      context.translator.tr(message, localeToSeq(context.locale)) match {
+      var translated: Option[String] = None
+      breakable {
+        for (locale <- context.locale) {
+          translated = context.translator.tr(message, localeToSeq(locale))
+          if (translated.isDefined) break
+        }
+      }
+      translated match {
         case Some(str) => str
         case None => ""
       }

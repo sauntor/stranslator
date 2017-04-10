@@ -1,18 +1,18 @@
 name := "stranslator"
 organization := "com.lingcreative"
 organizationName := "LingCreative Studio"
-version := "1.0.0"
+version := "1.0.1-SNAPSHOT"
 
 scalaVersion := "2.12.1"
-crossScalaVersions := Seq("2.11.0", "2.12.0")
+crossScalaVersions := Seq("2.11.0", "2.12.1")
 
 description := "A most lightweight library for translating you application to the local languages."
-homepage := Some(url(s"https://github.com/lingcreative/stranslator"))
+homepage := Some(url(s"https://github.com/sauntor/stranslator"))
 licenses := Seq(("Apache-2.0" -> url("http://www.apache.org/licenses/LICENSE-2.0.html")))
 scmInfo := Some(ScmInfo(
-  url("https://github.com/lingcreative/play-dbx"),
-  "https://github.com/lingcreative/play-dbx.git",
-  Some("https://github.com/lingcreative/play-dbx.git")
+  url("https://github.com/sauntor/stranslator"),
+  "https://github.com/sauntor/stranslator.git",
+  Some("https://github.com/sauntor/stranslator.git")
 ))
 developers := List(
   Developer("sauntor", "适然(Sauntor)", "sauntor@yeah.net", url("http://github.com/sauntor"))
