@@ -86,7 +86,7 @@ val translator = Translator("cp://l10n/translator.xml")
 > The `<include>` tag **does not** support **relative path** 
 
 ### About the `stranslator.Translator`
-It's the core API for translating. You can initialize it with an URL, a class path resource with "cp://" (no prefix is identical to it too),
+It's the core API for translating. You can initialize it with an URL, a class path resource which is start with "cp://" (no prefix is identical to it too),
 or an external resource on a **Server**(i.e. http://localhost:9090/l10n/my_app.xml).
 
 ### Enjoy it! :tea:
