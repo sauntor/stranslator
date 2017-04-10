@@ -34,28 +34,38 @@ If you create a translation file which located in `l10n/translator.xml`(within c
 ```xml
 <?xml version="1.0" encoding="UTF-8" ?>
 <translator>
-  <message>
-    <from>Hello, Sauntor! Welcome to China!</from>
-    <to>
-      <zh_CN>适然，你好！欢迎来到中国！</zh_CN>
-    </to>
-  </message>
+    <message>
+        <from>Hello, Sauntor! Welcome to China!</from>
+        <to>
+            <zh_CN>适然，你好！欢迎来到中国！</zh_CN>
+        </to>
+    </message>
 </translator>
 ```
 The `welcome` would be:
 `适然，你好！欢迎来到中国！`
 ###### Notice
-1. the line feed flowing the begin tag of `from`, `locale`s in `to`(i.e. <zh_CN>), will be ignored.
-2. you can break one line into multiple line by put an `\ ` to the end of the line.
+1. the line feed(\n) after the beginning and before the ending tag of `from`, `locale`s  in `to` tag(i.e. `<zh_CN>` and `</zh_CN>`), will be ignored.
+2. you can break one line into multiple lines by puting an `\ ` to the end of the line.
 For example:
 ```xml
-<from>
-    Hello, \
-    Jack! I'm waiting \
-    for you!
-</from>
+<translator>
+    <from>
+        Hello, \
+        Jack! I'm waiting \
+        for you!
+    </from>
+    <to>
+        <zh>捷克，你来了。\
+        我已经等你好久了！
+        </zh>
+    </to>
+</translator>
 ```
 The code above is equal to:
 ```xml
-<from>Hello, Jack! I'm waiting for you!</from>
+<translator>
+    <from>Hello, Jack! I'm waiting for you!</from>
+    <to><zh>捷克，你来了。我已经等你好久了！</zh></to>
+</translator>
 ```
