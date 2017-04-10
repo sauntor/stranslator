@@ -50,23 +50,27 @@ The `welcome` would be:
 For example:
 ```xml
 <translator>
-    <from>
-        Hello, \
-        Jack! I'm waiting \
-        for you!
-    </from>
-    <to>
-        <zh>捷克，你来了。\
-        我已经等你好久了！
-        </zh>
-    </to>
+    <message>
+        <from>
+            Hello, \
+            Jack! I'm waiting \
+            for you!
+        </from>
+        <to>
+            <zh>捷克，你来了。\
+            我已经等你好久了！
+            </zh>
+        </to>
+    </message>
 </translator>
 ```
 The code above is equal to:
 ```xml
 <translator>
-    <from>Hello, Jack! I'm waiting for you!</from>
-    <to><zh>捷克，你来了。我已经等你好久了！</zh></to>
+    <message>
+        <from>Hello, Jack! I'm waiting for you!</from>
+        <to><zh>捷克，你来了。我已经等你好久了！</zh></to>
+    </message>
 </translator>
 ```
 3. The default location to load translations from is `l10n/translator.xml`, i.e.
