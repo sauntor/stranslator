@@ -30,7 +30,7 @@ implicit val context = SimpleTranslatorContext(translator, Seq(locale))
 
 val welcome = ${"Hello, Sauntor! Welcome to China!"}
 ```
-If you create a translation file which located in `l10n/translator.xml`(within class path) with the flowing content:
+If you create a translation file which is located in `l10n/translator.xml`(within class path) with the flowing content:
 ```xml
 <?xml version="1.0" encoding="UTF-8" ?>
 <translator>
