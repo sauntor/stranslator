@@ -80,14 +80,16 @@ val translator = Translator()
 Is equal to:
 ```scala
 val translator = Translator("cp://l10n/translator.xml")
+// Or to this:
+//val translator = Translator("l10n/translator.xml")
 ```
 4. You can `include` another xml for translations by `<include>`tag :
 ```xml
 <translator>
-    <include>http://localhost:9000/some/app/l10n/translations.xml</include>
+    <include>http://example.com:9000/some/app/l10n/translations.xml</include>
 </translator>
 ```
-> The `<include>` tag **does not** support **relative path** 
+> The `<include>` tag **does not** support **relative path**, i.e. you can't include a resource like `../some/other/module.xml`.
 
 ### About the `stranslator.Translator`
 It's the core API for translating. You can initialize it with an URL, a class path resource which is start with "cp://" (no prefix is identical to it too),
