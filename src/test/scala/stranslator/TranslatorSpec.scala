@@ -2,7 +2,7 @@ package stranslator
 
 import java.util.Locale
 
-import stranslator.Translator.$
+import stranslator.Translator._
 
 /**
   * Translator test spec.

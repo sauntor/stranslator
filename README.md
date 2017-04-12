@@ -17,13 +17,15 @@ A most lightweight library for translating you application to the local language
 </translator>
 ```
 ### Usage
-1. Add to your project
+1. Add `Stranslator` to your project
 ```sbtshell
 libraryDependencies += "com.lingcreative" %% "stranslator" % "1.1.0"
 ```
 
-2. Code sample in your project
+2. Code sample
 ```scala
+import translator._
+
 val translator = Translator()
 val locale = new Locale("zh", "CN")
 implicit val context = SimpleTranslatorContext(translator, Seq(locale))
@@ -46,7 +48,7 @@ The `welcome` would be:
 `适然，你好！欢迎来到中国！`
 ###### Notice
 1. the line feed(`\n`) after the beginning and before the ending tag of `from`, `locale`s  (in `to` tag, i.e. `locale` stands for `<zh_CN>` and `</zh_CN>`), will be ignored.
-2. you can break one line into multiple lines by puting an `\ ` to the end of the line(and the leading space is ignored and the space after `\ ` will be preserved).
+2. you can break one line into multiple lines by putting an `\ ` to the end of the line(and the leading space is ignored and the space after `\ ` will be preserved).
 For example:
 ```xml
 <translator>
@@ -92,7 +94,7 @@ val translator = Translator("cp://l10n/translator.xml")
 > The `<include>` tag **does not** support **relative path**, i.e. you can't include a resource like `../some/other/module.xml`.
 
 ### About the `stranslator.Translator`
-It's the core API for translating. You can initialize it with an URL, a class path resource which is start with "cp://" (no prefix is identical to it too),
-or an external resource on a **Server**(i.e. http://localhost:9090/l10n/my_app.xml).
+It's the core API for translating. You can initialize it with an URL. An class path resource will start with "cp://" (no prefix is identical to it too),
+or an external resource on a **Web Server** with the corresponding uri pattern(i.e. http://example.com/l10n/demo-app.xml).
 
 ### Enjoy it! :tea:
